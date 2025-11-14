@@ -7,12 +7,7 @@ const IMAGES = [
   { id:6, src:'images/car6.jpg', title:'Porsche Cayenne', category:'suv', brand:'porsche' },
   { id:7, src:'images/car7.jpg', title:'BMW 3.0 CSL (classic)', category:'classic', brand:'bmw' },
   { id:8, src:'images/car8.jpg', title:'Mercedes AMG GT', category:'sport', brand:'mercedes' },
-  { id:9, src:'images/car9.jpg', title:'BMW X5', category:'crossover', brand:'bmw' },
-  { id:10, src:'images/car10.jpg', title:'Audi RS 6', category:'sport', brand:'audi' },
-  { id:11, src:'images/car11.jpg', title:'Porshe Cayenne', category:'suv', brand:'porsche' },
-  { id:12, src:'images/car12.jpg', title:'Ford Explorer', category:'crossover', brand:'ford' },
-  { id:13, src:'images/car13.jpg', title:'Mercedes Benz 190E', category:'classic', brand:'mercedes' },
-  { id:14, src:'images/car14.jpg', title:'1967 Ford Mustang', category:'classic', brand:'ford' }
+  { id:9, src:'images/car9.jpg', title:'BMW X5', category:'crossover', brand:'bmw' }
 ];
 
 
