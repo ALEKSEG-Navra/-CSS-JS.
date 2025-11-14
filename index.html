@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>АвтоГалерея — Семестровая работа</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">AutoGallery</h1>
+      <nav class="nav" aria-label="Главное меню">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#home" data-route class="nav-link">Главная</a></li>
+          <li><a href="#gallery" data-route class="nav-link">Галерея</a></li>
+          <li><a href="#about" data-route class="nav-link">О проекте</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="home" class="page page--active">
+      <div class="container">
+        <article class="hero">
+          <h2>AutoGallery — модная галерея автомобилей</h2>
+          <p>Тема: <strong>Машины / Авто</strong>. Современный дизайн, фильтрация, lightbox, фавориты, lazy-loading.</p>
+          <div class="hero-controls">
+            <a href="#gallery" data-route class="btn">Перейти в галерею</a>
+          </div>
+        </article>
+
+        <section class="features">
+          <article>
+            <h3>Реализовано</h3>
+            <ul>
+              <li>Динамическая галерея (данные в JS)</li>
+              <li>Фильтрация по типам/брендам, поиск, сортировка</li>
+              <li>Плавная фильтрация (fade + scale)</li>
+              <li>Lightbox с каруселью и клавиатурной навигацией</li>
+              <li>Избранное (localStorage), lazy-loading</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </section>
+
+
+
+    <section id="gallery" class="page">
+      <div class="container">
+        <div class="toolbar">
+          <div class="controls-left">
+            <select id="categorySelect" aria-label="Категория">
+              <option value="all">Все типы</option>
+              <option value="sport">Спорт</option>
+              <option value="classic">Классика</option>
+              <option value="suv">Внедорожник</option>
+              <option value="crossover">Кроссовер</option>
+            </select>
+
+            <select id="brandSelect" aria-label="Бренд">
+              <option value="all">Все бренды</option>
+              <option value="bmw">BMW</option>
+              <option value="audi">Audi</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="porsche">Porsche</option>
+              <option value="ford">Ford</option>
+            </select>
+
+            <input id="sortSelect" type="hidden" value="default" />
+          </div>
+
+          <div class="controls-right">
+            <input id="searchInput" type="search" placeholder="Поиск по названию..." aria-label="Поиск" />
+            <button id="favToggle" class="btn btn--muted" title="Показать избранное">Избранное</button>
+            <div class="effect-group">
+              <label class="visually-hidden" for="filterEffect">CSS эффект</label>
+              <select id="filterEffect" aria-label="Эффект">
+                <option value="none">Нет</option>
+                <option value="grayscale(100%)">Grayscale</option>
+                <option value="sepia(70%)">Sepia</option>
+                <option value="contrast(140%)">Contrast</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="galleryGrid" class="masonry" aria-live="polite"></div>
+
+        <div class="pager">
+          <button id="prevPage" class="btn">Назад</button>
+          <span id="pageInfo">1 / 1</span>
+          <button id="nextPage" class="btn">Вперед</button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="about" class="page">
+      <div class="container">
+        <h2>О проекте</h2>
+        <p>Данный проект представляет собой интерактивную галерею автомобилей с применением современных веб-технологий: HTML, CSS и JavaScript. Основная цель работы — продемонстрировать реализацию фильтрации изображений, анимаций и динамического взаимодействия с элементами интерфейса на стороне клиента.
+<br>
+Сайт выполнен в виде трёх логически связанных страниц:
+<br>
+1 - Главная страница — содержит общее описание проекта и навигационное меню.
+<br>
+2 - Галерея — основной раздел, где представлены изображения автомобилей различных категорий (спорткары, седаны, внедорожники). Галерея поддерживает фильтрацию по категориям.
+<br>
+3 - О проекте — содержит цель работы. Показывает, какие эффекты можно применить, как облегкчить работу и функционал для проекта.
+<br>
+<br>
+<br>
+Преимущества проекта:
+<br>
+Минимальная нагрузка на систему (работает без серверной части).
+<br>
+Современный дизайн и удобный интерфейс.
+<br>
+Лёгкость масштабирования — можно легко добавить новые категории и изображения.
+</p>
+
+        <h3>Контрольные пункты</h3>
+        <ol>
+          <li>HTML: header, main, section, article, footer</li>
+          <li>CSS: Grid / Flex, адаптивность, transition/transform</li>
+          <li>JS: события, массив данных, DOM-manipulation, localStorage</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 AutoGallery — Семестровая работа</p>
+    </div>
+  </footer>
+
+
+  
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр изображения">
+    <button class="lightbox-close" id="lbClose" aria-label="Закрыть">✕</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="Предыдущее">◀</button>
+    <div class="lightbox-content" id="lbContent">
+      <img id="lbImage" alt="" />
+      <figcaption id="lbCaption"></figcaption>
+      <div id="lbMeta" class="lb-meta"></div>
+    </div>
+    <button class="lightbox-next" id="lbNext" aria-label="Следующее">▶</button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
